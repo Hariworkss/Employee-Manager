@@ -1,0 +1,86 @@
+.card{
+    box-shadow: 2px 2px 20px 1px ;
+    border-radius: 20px;
+    transition: .3s;
+}
+.card:hover{
+    box-shadow: 2px 2px 30px 5px ;
+    
+}
+.rowproperty{
+    height:68vh;
+    padding-top:8vh;
+}
+.l-col{
+    padding-top:40px;
+    padding-left:60px;
+
+}
+.subtext{
+    font-size:35px;
+    margin-top:40px;
+    
+}
+.subsubtext{
+    color:#F59743;
+}
+.add-text{
+    font-weight:bold;
+}
+.heading1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #9ab9f4;
+    text-shadow: 2px 2px 80px ;
+    margin-top: 25px;
+}
+
+
+.headtext{
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    margin-top: 60px;
+    font-size: 50px;
+    text-shadow: 2px 2px 30px white;
+}
+.btnhead{
+    padding: 20px 50px 20px 50px; 
+    box-shadow: 2px 2px 30px 3px ;
+}
+.btnhead:hover{
+    box-shadow: 2px 2px 20px  ;
+
+}
+.search{
+    text-align: center;
+    box-shadow: 2px 2px ;
+}
+.search:hover{
+    box-shadow: 2px 3px 8px ;
+
+}
+.searchpad{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.devpanel{
+    border-radius: 10px;
+    background-color: #9ab9f4;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+
+
+
+}
+.despanel{
+    background-color:#D0D2D7;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}

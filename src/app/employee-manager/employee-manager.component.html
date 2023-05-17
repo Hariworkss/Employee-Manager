@@ -1,0 +1,213 @@
+<div class="container-fluid ">
+
+<!-- System date and time -->
+<!-- <p class="float-end text-primary" >Login date: {{loginDate | date:'medium' }}</p>      -->
+<div class="container-fluid" style="--bs-gutter-x: 0rem; --bs-gutter-y: 0rem;
+">
+    <div class="row rowproperty">
+        <div class="col-md-6 l-col ">
+            
+            <h1 class="heading1 ">Employee Managenment System</h1>
+            <h4 class="  mb-4 subtext">Managing Employee Details <br> </h4>
+            <h3 class="">Made Easier Here</h3>
+            
+        </div>
+        <div class="col-md-6 ">
+            <img class="w-100" src="https://img.freepik.com/free-vector/colleagues-working-together-project_74855-6308.jpg?w=900&t=st=1683796159~exp=1683796759~hmac=37e5196eab16a283058d0d7b5ae7519f1e642f1218f7aaa1e9028e37001f5918" alt="">
+        </div>
+
+       
+    </div>
+    <hr>
+    <!-- add employee section -->
+    <section>
+        <div class="row mt-5 mb-5 ">
+            <div class="col-md-12">
+                <h2 class="text-center add-text mb-4 bg-light">Add Employee With Just a Click</h2> 
+            </div>
+            <div class="col-md-12 d-flex justify-content-center">
+                <a class="btn btn-primary " routerLink="/employee/add"><i class="fa fa-add"></i> Add employee</a>
+            </div>
+        </div>
+    </section>
+    
+    <hr>
+<!-- input and search -->
+    <div class="row mt-3">
+        <div class="col-md-12 searchpad mt-4">
+            <input  (keyup)="search($event)" type="text" class="form-control search" placeholder="Search Employee" id="">
+        </div>
+        
+    </div>
+
+</div>
+ 
+    <!-- <pre>{{heading}}</pre> -->
+    <!-- <pre>
+        {{allContacts | json}}
+    </pre> -->
+
+    <!-- Card developers -->
+    <section id="section-dev">
+        <div class="container-fluid mt-5 ">
+            <h1 class="text-center mt-5 mb-5">Our Developers</h1>
+            <div class="row devpanel ">
+                <div class="col-md-6 "  *ngFor="let employee of allEmployees | filter:searchKey:'firstName' ">   <!--for loop -->  
+                    <div class="card mt-5 ms-2 "*ngIf="filterdev(employee)">
+                        <div class="card-body  p-5">
+                            <div class="row">
+                                <div class="col-md-4 ps-5">
+    
+                                    <!--property binding-->
+                                    <img class="w-100 borderr" [src]="employee.imageUrl" alt="">   
+    
+                                </div>
+                                <div class="col-md-8 pt-2 ">
+                                    <ul class="list-group">
+    
+                                        <!--string interpolation-->
+                                        <li class="list-group-item">Name:{{employee.firstName}}
+                                             <!-- View  -->
+                                            <a routerLink="/employee/view/{{employee.id}}" style="float: right;"><i class="fa-solid fa-eye text-success"></i></a>
+                                            </li>
+                                        <li class="list-group-item">Position:{{employee.position}}
+                                            <!-- Edit -->
+                                            <a routerLink="/employee/update/{{employee.id}}" style="float: right;"><i class="fas fa-edit"></i></a>
+    
+                                        </li>
+                                        <li class="list-group-item">Experience:{{employee.experience}}
+                                            <!-- Delete -->
+                                            <button (click)="deleteEmp(employee.id)" class="border-0 bg-white text-danger btn p-0" style="float: right;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </li>
+                                      </ul>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Card designers-->
+    <section id="section-des">
+        <div class="container-fluid mt-5 mb-5 ">
+            <hr>
+            <h1 class="text-center mt-5 mb-4">Our Designers</h1>
+            <div class="row   despanel">
+                <div class="col-md-6 "  *ngFor="let employee of allEmployees | filter:searchKey:'firstName' ">   <!--for loop -->  
+                    <div class="card mt-5 ms-2 " *ngIf="filterdes(employee)">
+                        <div class="card-body  p-5">
+                            <div class="row">
+                                <div class="col-md-4 ps-5">
+    
+                                    <!--property binding-->
+                                    <img class="w-100 borderr" [src]="employee.imageUrl" alt="">   
+    
+                                </div>
+                                <div class="col-md-8 pt-2 ">
+                                    <ul class="list-group">
+    
+                                        <!--string interpolation-->
+                                        <li class="list-group-item">Name:{{employee.firstName}}
+                                             <!-- View  -->
+                                            <a routerLink="/employee/view/{{employee.id}}" style="float: right;"><i class="fa-solid fa-eye text-success"></i></a>
+                                            </li>
+                                        <li class="list-group-item">Position:{{employee.position}}
+                                            <!-- Edit -->
+                                            <a routerLink="/employee/update/{{employee.id}}" style="float: right;"><i class="fas fa-edit"></i></a>
+    
+                                        </li>
+                                        <li class="list-group-item">Experience:{{employee.experience}}
+                                            <!-- Delete -->
+                                            <button (click)="deleteEmp(employee.id)" class="border-0 bg-white text-danger btn p-0" style="float: right;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                        </li>
+                                      </ul>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+        <!-- Footer -->
+<section id="section-foot">
+    <div class="footer mt-5">
+        <footer class="text-center text-lg-start bg-white text-muted">
+           
+          
+            <!-- Section: Links  -->
+            <section class="">
+              <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-primary">
+                      <i class="fas fa-gem me-3 text-primary"></i>Employee Manager
+                    </h6>
+                    <p>
+                        An employee management system or EMS is a tool that helps improve employee satisfaction and productivity to help a company achieve their overall goals.
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  <!-- Grid column -->
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-dark">
+                      Developement
+                    </h6>
+                    <p>
+                      <a href="#!" class="text-reset">Angular</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">React</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Vue</a>
+                    </p>
+                    <p>
+                      <a href="#!" class="text-reset">Laravel</a>
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+          
+                  
+          
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-dark">Contact</h6>
+                    <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+                    <p>
+                      <i class="fas fa-envelope me-3 text-secondary"></i>
+                      employee1@example.com
+                    </p>
+                    <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                    <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                  </div>
+                  <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+              </div>
+            </section>
+            <!-- Section: Links  -->
+          
+            
+          </footer>
+          <!-- Footer -->
+            </div>
+</section>
+
+
+</div>

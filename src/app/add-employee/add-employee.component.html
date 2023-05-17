@@ -1,0 +1,43 @@
+<div class="container-fluid container-img">
+    <div class="row ">
+        <div class="col mt-4 ">
+            <h1 class="text-primary text-center">Add Employee</h1>
+            <h4 class="mt-4 mb-4 text-center bg-light"> Fill Employee Details in the given form</h4>
+        </div>
+    </div>
+
+    <!-- form -->
+    <div class="container pb-5">
+        <div class="row">
+            <!-- <pre>
+                {{contact | json}}
+            </pre> -->
+           
+            <!-- form col -->
+            <div class="col-md-4"></div>
+            <div class="col-md-4 ">
+                <form class="form-property border border-2 rounded p-5 bg-light">
+                    <input [(ngModel)]="employee.id" name="employeeId" type="text" placeholder="Enter Contact Id" class="form-control">
+                    <input [(ngModel)]="employee.firstName" name="employeeName" type="text"  placeholder="Enter Contact Name" class="form-control">
+                    <input [(ngModel)]="employee.imageUrl" name="employeePhoto" type="text" placeholder="Enter Contact Photo url" class="form-control mt-2">
+                    <input [(ngModel)]="employee.email" name="employeeEmail"  type="text" placeholder="Enter Contact Email" class="form-control mt-2">
+                    <input [(ngModel)]="employee.contactNumber" name="employeeMob" type="text" placeholder="Enter Contact Mobile" class="form-control mt-2">
+                    <input [(ngModel)]="employee.position" name="employeePosition" type="text" placeholder="Enter Position" class="form-control mt-2">
+                    <input [(ngModel)]="employee.experience" name="employeeExperience" type="text" placeholder="Enter Experience" class="form-control mt-2">
+
+                    <!-- <select [(ngModel)]="contact.groupId" name="groupId" class="form-control mt-2" >
+                        <option value=""selected hidden disabled>Select <i class="fa-light fa-arrow-down-short-wide"></i></option>
+                        <option value="{{group.id}}" *ngFor="let group of allGroups">{{group.name}}</option>   
+                        
+                    </select> -->
+
+                    <input (click)="addEmployee()" type="button" value="Create" class="btn btn-primary mt-2">
+                    <a routerLink="/" class="btn btn-danger mt-2 ms-2" style="float: right;">Close</a>
+                </form>
+            </div>
+            <div class="col-md-4 ">
+                <img class="img-icon" [src]="employee.imageUrl" alt="">
+            </div>
+        </div>
+    </div>
+</div>
